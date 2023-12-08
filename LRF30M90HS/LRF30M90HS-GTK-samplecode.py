@@ -1,16 +1,15 @@
 # =============================================================================
-# The example program will use the GTK3 framework. Please use the following command to install the required packages.
-# $sudo apt-get install libgtk-3-dev python3-gi
+# The sample code will use the pyserial lib and GTK3 framework. Please use the following command to install the required packages.
+# $ sudo pip install pyserial
+# $ sudo apt-get install libgtk-3-dev python3-gi
 # =============================================================================
 
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import GLib
 from gi.repository import Gtk
-import sys
 import serial 
 import threading
-import time
 
 
 #GTK UI
@@ -19,31 +18,31 @@ class SimpleUI(Gtk.Window):
         Gtk.Window.__init__(self, title="Simple UI")
         self.set_border_width(10)
 
-        # 创建布局
+        # Create layout
         self.box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         self.add(self.box)
 
-        # 创建左侧布局
+        # Create left side layout
         left_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         self.box.pack_start(left_box, True, True, 0)
 
-        # 创建按钮1
+        # Create button1
         self.button1 = Gtk.Button(label="Start")
         self.button1.connect("clicked", self.on_button1_clicked)
         left_box.pack_start(self.button1, True, True, 0)
 
-        # 创建按钮2
+        # Create button2
         self.button2 = Gtk.Button(label="Stop")
         self.button2.connect("clicked", self.on_button2_clicked)
         left_box.pack_start(self.button2, True, True, 0)
 
-        # 创建右侧布局
+        # Create right side layout
         right_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         self.box.pack_start(right_box, True, True, 0)
 
-        # 创建Label
-        self.label = Gtk.Label(label="N/A", xalign=0.5)  # xalign 控制文本水平对齐
-        self.label.set_size_request(200, -1)  # 设置固定宽度
+        # Create label
+        self.label = Gtk.Label(label="N/A", xalign=0.5) 
+        self.label.set_size_request(200, -1) 
         right_box.pack_start(self.label, True, True, 0)
 
     def on_button1_clicked(self, widget):
@@ -56,8 +55,7 @@ class SimpleUI(Gtk.Window):
     def update_label(self, text):
         self.label.set_text(text)
         
-    ##LRF##
-    #Set COM port
+    #Set serial COM port
     ser = serial.Serial()
     ser.port = '/dev/ttyUSB2'
     ser.baudrate = 115200
@@ -79,7 +77,7 @@ class SimpleUI(Gtk.Window):
                     else:
                         GLib.idle_add(self.update_label, f"{distance} mm")
 
-# #main
+#main
 win = SimpleUI()
 win.connect("destroy", Gtk.main_quit)
 

@@ -1,5 +1,7 @@
-#Sample code for LRF20M100HS
-#Use pip to install pyserial: $ sudo pip install pyserial
+# =============================================================================
+# The sample code will use the pyserial lib. Please use the following command to install the required packages.
+# $ sudo pip install pyserial
+# =============================================================================
 
 import serial.tools.list_ports
 import sys
