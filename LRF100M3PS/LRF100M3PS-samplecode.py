@@ -1,6 +1,9 @@
+# =============================================================================
+# The sample code will use the pyserial lib. Please use the following command to install the required packages.
+# $ sudo pip install pyserial
+# =============================================================================
+
 import serial 
-import time
-import sys
 
 #declare
 global_flag=True

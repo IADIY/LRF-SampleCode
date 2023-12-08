@@ -1,3 +1,8 @@
+# =============================================================================
+# The sample code will use the pyserial lib. Please use the following command to install the required packages.
+# $ sudo pip install pyserial
+# =============================================================================
+
 import serial 
 import threading
 
@@ -14,7 +19,6 @@ ser.topbits = 1
 ser.timeout = 3000
 ser.open()
 
-global xxx
 def receive():
     while(global_flag):
         data=ser.read_all()
