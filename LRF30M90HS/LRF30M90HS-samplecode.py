@@ -34,6 +34,8 @@ cmd=b'~010600000001480A\r\n'
 ser.write(cmd)  
 
 #Select functions
+#4 main commands to choose: 1. Continuous Measurement (Not an option in sample code) 2. Single Measurement
+#3. Laser ON 4. Laser OFF
 while True:
     key=input("\nPlease enter the operation command:\n -s single measurement\n -o Laser ON\n -f Laser OFF\n -q Exit\n")
 
@@ -62,5 +64,9 @@ while True:
     elif key=='q':
         ser.close()
         sys.exit()
+
+    #Incorrect Input
+    else:
+        print("Invalid option. Please enter one of the above options.")
 
 
