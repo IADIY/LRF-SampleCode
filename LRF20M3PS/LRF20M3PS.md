@@ -1,6 +1,6 @@
 # 20m Economical Laser Distance Sensor Module - LRF20M3PS
 ## Introduction
-The Economical Laser Distance Sensor Module (LRF20M3PS), produced by IADIY, is a cost-effective solution we provide specifically for distance measurement. Despite its affordable price, it delivers excellent accuracy performance. This rangefinder module is easy to operate, flexible to install, and has strong expandability. The measurement range can reach 20 meters, making it suitable for measuring static targets. It is widely used in security, industrial, detection, automation, and other applicable fields.
+The 20 meter Economical Laser Distance Sensor Module (LRF20M3PS), produced by IADIY, is a cost-effective solution we provide specifically for distance measurement. Despite its affordable price, it delivers excellent accuracy performance. This rangefinder module is easy to operate, flexible to install, and has strong expandability. The measurement range can reach 20 meters, making it suitable for measuring static targets. It is widely used in security, industrial, detection, automation, and other applicable fields.
  
 ## Communication
 ### UART Parameters
