@@ -29,7 +29,7 @@ except Exception as e:
     print(str(e))
     sys.exit()
 
-#Laser OFF (Confrim LRF is in default off state)
+#Laser OFF (Confirm LRF is in default off state)
 cmd=b'$0003260029&'
 ser.write(cmd) 
 
