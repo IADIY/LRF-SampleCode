@@ -16,7 +16,7 @@ The 20 meter Economical Laser Distance Sensor Module (LRF20M3PS), produced by IA
 | Continuous Measurement | $00022426& |
 | Laser ON | $0003260130& |
 | Laser OFF | $0003260029& |
-| Test Command/Command Recieved | $00023335& |
+| Test Command/Command Received | $00023335& |
 
 ## More Details
 To learn more about this product and to see a full data sheet, please visit: https://www.iadiy.com/laser-module/laser-sensor/laser-distance-sensor/Economical-Laser-Distance-Sensor-Module
