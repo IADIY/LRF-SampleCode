@@ -12,11 +12,14 @@ portlist=[]
 index=0
 for port, desc, hwid in ports:
     portlist.append(port)
-    print(str(index)+": "+port)
+    print(str(index)+") "+desc+"|"+port)
     index+=1
+if portlist == []:
+    print("No serial ports detected")
+    sys.exit()
 
 #Select COMport
-portname=input("Please input COMport number: ")
+portname=input("Please input the number of the desired port: \n")
 try:
     ser = serial.Serial(
         port=portlist[int(portname)],\
@@ -34,8 +37,6 @@ cmd=b'$0003260029&'
 ser.write(cmd) 
 
 #Select functions
-#4 main commands to choose: 1. Continuous Measurement (Not an option in sample code) 2. Single Measurement
-#3. Laser ON 4. Laser OFF
 while True:
     key=input("\nPlease enter the operation command:\n -s single measurement\n -o Laser ON\n -f Laser OFF\n -q Exit\n")
 

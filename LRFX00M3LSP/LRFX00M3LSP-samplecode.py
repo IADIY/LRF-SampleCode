@@ -12,11 +12,14 @@ portlist=[]
 index=0
 for port, desc, hwid in ports:
     portlist.append(port)
-    print(str(index)+": "+port)
+    print(str(index)+") "+desc+"|"+port)
     index+=1
+if portlist == []:
+    print("No serial ports detected")
+    sys.exit()
 
 #Select COMport
-portname=input("Please input COMport number: ")
+portname=input("Please input the number of the desired port: \n")
 try:
     ser = serial.Serial(
         port=portlist[int(portname)],\
