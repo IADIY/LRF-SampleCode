@@ -1,7 +1,7 @@
 # =============================================================================
 # The sample code will use the pyserial lib. Please use the following command to install the required packages.
 # $ sudo pip install pyserial
-# =============================================================================#Use pip to install pyserial: $ sudo pip install pyserial
+# =============================================================================
 
 import serial.tools.list_ports
 import sys
@@ -12,11 +12,14 @@ portlist=[]
 index=0
 for port, desc, hwid in ports:
     portlist.append(port)
-    print(str(index)+": "+port)
+    print(str(index)+") "+desc+"|"+port)
     index+=1
+if portlist == []:
+    print("No serial ports detected")
+    sys.exit()
 
 #Select COMport
-portname=input("Please input COMport number: ")
+portname=input("Please input the number of the desired port: \n")
 try:
     ser = serial.Serial(
         port=portlist[int(portname)],\
