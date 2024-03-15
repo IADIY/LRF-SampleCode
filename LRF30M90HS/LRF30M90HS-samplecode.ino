@@ -9,25 +9,17 @@
 char stopMeasurement[] = "~010600000001480A\r\n";
 //char laserOff[] = "~01060030000089C5\r\n";
 char laserOn[] = "~0106003000014805\r\n"; 
-char singleMeasurement[] = "~01030100000185F6\r\n";
-//char continuousMeasurement[] = "~01060000000089CA\r\n";
+//char singleMeasurement[] = "~01030100000185F6\r\n";
+char continuousMeasurement[] = "~01060000000089CA\r\n";
 
-//Intialize Timer Variables
-unsigned long startMillis;
-unsigned long currentMillis;
-//Duration needed to wait in milliseconds
-const unsigned long period = 1000;
 
 //intialize hexadecimal converter function
 int distanceInterpreter(String data);
 
 void setup(void) {
-  //Serial.begin defaults to 8N1 with atimeout of 1000 milliseconds
+  //Serial.begin defaults to 8N1 with a timeout of 1000 milliseconds
   //Baud rate is 115200
   Serial.begin(115200);
-
-  //Intial Start Time
-  startMillis = millis();
 
   //Stop Measurement(Prevent the module from being in continuous measurement mode.)
   Serial.write(stopMeasurement);
@@ -35,27 +27,21 @@ void setup(void) {
   //Laser ON
   Serial.write(laserOn);
 
+  //Continuous Measurement
+  Serial.write(continuousMeasurement);
   delay(1000);
 }
 
 void loop(void) {
-  //Store Current Time
-  currentMillis = millis();
   
-  //Only once the period has past should a measurement be taken
-  if(currentMillis - startMillis >= period){
-    Serial.write(singleMeasurement);
-
-    //Must reset the startMillis variable to ensure a measurement will be taken next cycle
-    startMillis = currentMillis;
-  } 
-
   //Read the Data
   String data = Serial.readStringUntil('\n');
   if(data.length()>=18) {
     Serial.println("Data:" + data + ",  Distance:" + (String)distanceInterpreter(data) + "mm");
   }
-  
+  //Too long of a delay will likely cause accuracy issues. If a longer delay is needed,
+  //please look at the millis sample code
+  delay(10);
 }
 
 int distanceInterpreter(String data){

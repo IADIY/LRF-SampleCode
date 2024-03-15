@@ -12,6 +12,12 @@ char laserOn[] = "$0003260130&";
 char singleMeasurement[] = "$00022123&";
 //char continuousMeasurement[] = "$00022426&";
 
+//Intialize Timer Variables
+unsigned long startMillis;
+unsigned long currentMillis;
+//Duration needed to wait in milliseconds
+const unsigned long period = 1000;
+
 //intialize distance converter function
 int distanceInterpreter(String data);
 
@@ -20,17 +26,29 @@ void setup(void) {
   //Baud rate is 115200
   Serial.begin(115200);
 
+  //Intial Start Time
+  startMillis = millis();
+
   //#Laser OFF (Confirm LRF is in default off state)
   Serial.write(laserOff);
 
   //Laser ON
   Serial.write(laserOn);
+
   delay(1000);
 }
 
 void loop(void) {
-  Serial.write(singleMeasurement);
-  delay(1000);
+  //Store Current Time
+  currentMillis = millis();
+  
+  //Only once the period has past should a measurement be taken
+  if(currentMillis - startMillis >= period){
+    Serial.write(singleMeasurement);
+
+    //Must reset the startMillis variable to ensure a measurement will be taken next cycle
+    startMillis = currentMillis;
+  } 
 
   //Read the Data
   String data = Serial.readStringUntil('&');
