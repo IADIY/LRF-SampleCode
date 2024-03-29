@@ -38,10 +38,11 @@ while True:
 
     #single measurement
     if key=='s':
+        ser.reset_input_buffer()
         cmd=bytearray(b'\xAE\xA7\x04\x00\x05\x09\xBC\xBE')  
         ser.write(cmd)  
         data=ser.read_until(b'\xBC\xBE')
-        print(data)
+        print('Module response: '+str(data))
         if(len(data)==8):
             print('Invalid result (too close or too far)')
         elif(len(data)==27):
@@ -63,4 +64,6 @@ while True:
         ser.close()
         sys.exit()
 
-
+    #Incorrect Input
+    else:
+        print("Invalid option. Please enter one of the above options.")
