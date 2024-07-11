@@ -1,6 +1,6 @@
-# 1500m Compact Long-Distance Laser RangeFinder Module - LRF1500M1LS
+# 1500m Compact Long-Distance Laser RangeFinder Module - LRFX00M1LS
 ## Introduction
-The 1500m Compact Long-Distance Laser RangeFinder Module (LRF1500M1LS), produced by IADIY, is an outdoor long-range, compact-volume solution product from IADIY. Its compact size has been designed to reduce the module to 25×26×13mm, with a maximum measurement range of over 1500m. It has been integrated by many customers into applications such as handheld devices, unmanned aerial vehicles (UAVs), unmanned surface vehicles (USVs), and gun scopes, among others.
+The 1500m Compact Long-Distance Laser RangeFinder Module (LRFX00M1LS), produced by IADIY, is an outdoor long-range, compact-volume solution product from IADIY. Its compact size has been designed to reduce the module to 25×26×13mm, with a maximum measurement range of over 1500m. It has been integrated by many customers into applications such as handheld devices, unmanned aerial vehicles (UAVs), unmanned surface vehicles (USVs), and gun scopes, among others.
 
 ## Communication
 
