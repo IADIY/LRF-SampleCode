@@ -25,7 +25,7 @@ try:
     #NOTE: Depending on what the baud rate was changed to, may need to edit the baudrate here too before you can reconnect
     ser = serial.Serial(
         port=portlist[int(portname)],\
-        baudrate=921600,\
+        baudrate=460800,\
         parity=serial.PARITY_NONE,\
         stopbits=serial.STOPBITS_ONE,\
         bytesize=serial.EIGHTBITS,\
