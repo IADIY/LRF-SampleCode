@@ -1,4 +1,4 @@
-# 2km Long-Range Laser Rangefinder Module - LRF2K1LS
+# 20m High Frequency Compact Laser Distance Sensor Module - LRF20M100HS
 ## Introduction
 The LRF20M100HS is a compact laser rangefinder module that uses dToF technology. It features a high-sensitivity SPAD sensor, enabling a maximum measurement distance of 20 meters indoors and 12 meters outdoors. The TDC architecture design ensures the module maintains a stable measurement frequency of 100Hz. Which uses LGA packaging technology to minimize size and weighs only 1.35g. It includes a locking hole and adhesive backing for easy installation and integration.
 ## Communication
